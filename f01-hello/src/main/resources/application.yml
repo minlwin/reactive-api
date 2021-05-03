@@ -1,0 +1,5 @@
+spring:
+  r2dbc:
+    url: r2dbc:mariadb://127.0.0.1:3306/flx_1hello
+    username: maria
+    password: maria
