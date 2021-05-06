@@ -5,8 +5,7 @@ import org.springframework.data.annotation.Id;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public record Category(
-        @Id
-        int id,
+        @Id int id,
         String name,
         String logo) {
 }
