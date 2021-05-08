@@ -16,4 +16,7 @@ public record Invoice(
         @Column("address_id") int addressId,
         String remark
         ) {
+        public static Invoice of(int id, Invoice i) {
+                return new Invoice(id, i.date(), i.memberId(), i.total(), i.count(), i.addressId(), i.remark());
+        }
 }

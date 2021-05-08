@@ -8,4 +8,8 @@ public record Category(
         @Id int id,
         String name,
         String logo) {
+
+    public static Category of(int id, Category o) {
+        return new Category(id, o.name(), o.logo());
+    }
 }

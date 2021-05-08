@@ -17,8 +17,7 @@ public class DetailsService {
 
     public Mono<Details> update(int id, Details details) {
         return repo.findById(id)
-                .map(data -> new Details(data.id(), details.invoiceId(), details.productId(), details.count(), details.price()))
-                .flatMap(data -> repo.save(details));
+                .flatMap(data -> repo.save(Details.of(id, details)));
     }
 
     public Flux<Details> search(int category, String product, LocalDate from, LocalDate to) {

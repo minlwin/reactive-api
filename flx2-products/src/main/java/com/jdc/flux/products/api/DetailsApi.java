@@ -18,10 +18,10 @@ public class DetailsApi {
 
     @GetMapping
     public Flux<Details> search(
-            @RequestParam int category,
-            @RequestParam String product,
-            @RequestParam LocalDate from,
-            @RequestParam LocalDate to) {
+            @RequestParam(required = false) int category,
+            @RequestParam(required = false) String product,
+            @RequestParam(required = false) LocalDate from,
+            @RequestParam(required = false) LocalDate to) {
         return service.search(category, product, from, to);
     }
 

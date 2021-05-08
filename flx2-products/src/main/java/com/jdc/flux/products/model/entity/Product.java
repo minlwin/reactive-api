@@ -15,4 +15,7 @@ public record Product(
         String description,
         Boolean deleted
 ) {
+        public static Product of(int id, Product p) {
+                return new Product(id, p.name(), p.categoryId(), p.price(), p.description(), p.deleted());
+        }
 }
